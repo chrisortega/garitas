@@ -1,55 +1,30 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link href='css/demo.css' rel='stylesheet' />
-    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js'></script>
-    <title>Pull-To-Refresh Demo</title>
-    <meta content='width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0' name='viewport' />
-    <meta content='yes' name='apple-mobile-web-app-capable' />
-    <meta content='black' name='apple-mobile-web-app-status-bar-style' />
-  </head>
-  <body>
-    <div id='wrapper'>
-      <ul>
-        <li>This will only work on mobile device</li>
-        <li>List item</li>
-        <li>List item</li>
-        <li>List item</li>
-        <li>List item</li>
-        <li>List item</li>
-        <li>List item</li>
-        <li>List item</li>
-        <li>List item</li>
-        <li>List item</li>
-        <li>List item</li>
-        <li>List item</li>
-        <li>List item</li>
-        <li>List item</li>
-        <li>List item</li>
-        <li>List item</li>
-        <li>List item</li>
-        <li>List item</li>
-        <li>List item</li>
-        <li>List item</li>
-        <li>List item</li>
-        <li>List item</li>
-        <li>List item</li>
-        <li>List item</li>
-        <li>List item</li>
-        <li>List item</li>
-        <li>List item</li>
-        <li>List item</li>
-      </ul>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="js/jquery.mobile-1.4.2.min.css">
+<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+</head>
+<body>
+
+<div data-role="page">
+  <div data-role="header">
+    <h1>Welcome To My Homepage</h1>
+  </div>
+
+  <div data-role="main" class="ui-content">
+    <a href="#myPopup" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all">Show Popup</a>
+    
+    <div data-role="popup" id="myPopup">
+      <p>This is a simple popup.</p>
     </div>
-    <script src='js/jquery.pull-to-refresh.js'></script>
-    <script>
-      $(document).ready(function(){
-        $('#wrapper').pull_to_refresh({
-          refresh: function(stoploading){
-            stoploading();
-          }
-        });
-      });
-    </script>
-  </body>
+  </div>
+
+  <div data-role="footer">
+    <h1>Footer Text</h1>
+  </div>
+</div> 
+
+</body>
 </html>
