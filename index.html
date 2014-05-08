@@ -12,13 +12,30 @@
 <body>
 
 <div data-role="page" id="pageone">
+
+  <div data-role="panel" id="myPanel" data-position="right"> 
+    
+      <div data-role="main" class="ui-content">
+    
+      <div class="ui-field-contain">
+        <label for="search">Search:</label>
+        <input type="search" name="search" id="search" placeholder="Search for content...">
+      </div>
+      <input type="submit" data-inline="true" onclick="alert()" value="Submit">
+    
+  </div>
+
+
+    
+  </div> 
+
   <div data-role="header">
     <h1>Garitas Tijuana</h1>
     <div data-role="navbar" data-iconpos="top">
       <ul>
-        <li><a href="#"  data-icon="home">Home</a></li>
+        <li><a href="#" onclick="getData()"  data-icon="home">Home</a></li>
         <li><a href="#" onclick="getData()" data-icon="arrow-r">Reload</a></li>
-        <li><a href="#" data-icon="search">Search</a></li>
+        <li>   <a href="#myPanel" data-icon="search" class="ui-btn ui-btn-inline ui-corner-all ui-shadow">Open Panel</a></li>
       </ul>
     </div>
   </div>
@@ -27,8 +44,8 @@
     
   </div>
 
-  <div data-role="footer">
-    <h1>My Footer</h1>
+  <div data-role="footer" data-position="fixed" data-fullscreen="true">
+    <h1>Garitas</h1>
   </div>
 </div> 
 
