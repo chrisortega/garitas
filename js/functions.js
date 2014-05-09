@@ -34,7 +34,10 @@ var baseUrl = "http://www.frontera.info/Garitas/InfoGaritas.aspx";
 
 
 function html2json(tab) {
+
+  
    var json = '{';
+   var text = "";
    var otArr = [];
    var tbl2 =tab.each(function(i) {        
       x = $(this).children();
@@ -44,8 +47,10 @@ function html2json(tab) {
       var itArr = [];
       x.each(function() {
       	
+       
+         itArr.push('"' + $(this).html() + '"');
+         text = $(this).html();
 
-         itArr.push('"' + $(this).text() + '"');
       });
 
 
@@ -53,5 +58,12 @@ function html2json(tab) {
    })
    json += otArr.join(",") + '}'
 
-   return json;
+   var splited  = text.split("<tr>");
+   for (var i = splited.length - 1; i >= 0; i--) {
+     console.log(splited[i])
+   };
+
+
+
+   return text;
 }
