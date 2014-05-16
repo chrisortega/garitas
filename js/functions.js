@@ -1,20 +1,34 @@
 function getData(){
 
   
-var baseUrl = "http://www.frontera.info/Garitas/InfoGaritas.aspx";
+var baseUrl = "http://apps.cbp.gov/bwt/mobile.asp?action=n&pn=2506";
 	
     $.ajax({
         url: baseUrl,
         type: "get",
         dataType: "",
         success: function(data) {
-        	var $foop;
-        	$foop = $('<form>' + data.responseText + '</form>');
+          
 
-        	
-			var tobject = $foop.find('table');
-  			var table = html2json(tobject); // Convert the table into a javascript object
-  			$("#main").html(table)
+
+          $heads = $(data.responseText).find(".contain_head")
+          getPorts($heads)
+          $details = $(data.responseText).find(".pass_details")
+
+
+
+
+              $.each($details,function(){    
+                console.log(this)
+
+              $em =  $(this).find("p").text()  
+                console.log($em)
+          })
+
+
+
+
+
   			
         	
         	/*
@@ -32,38 +46,14 @@ var baseUrl = "http://www.frontera.info/Garitas/InfoGaritas.aspx";
 
 }
 
-
-function html2json(tab) {
-
-  
-   var json = '{';
-   var text = "";
-   var otArr = [];
-   var tbl2 =tab.each(function(i) {        
-      x = $(this).children();
-
-
-      
-      var itArr = [];
-      x.each(function() {
-      	
-       
-         itArr.push('"' + $(this).html() + '"');
-         text = $(this).html();
-
-      });
-
-
-      otArr.push('"' + i + '": [' + itArr.join(',') + ']');
-   })
-   json += otArr.join(",") + '}'
-
-   var splited  = text.split("<tr>");
-   for (var i = splited.length - 1; i >= 0; i--) {
-     console.log(splited[i])
-   };
-
-
-
-   return text;
+function getPorts(heads){
+          var ports = [];
+          $.each($heads,function(){              
+              ports.push($(this).find("strong").text())
+          })
+          console.log(ports)
+          return ports
 }
+
+
+
