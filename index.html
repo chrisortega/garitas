@@ -3,10 +3,11 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="js/jquery.mobile-1.4.2.min.css">
+<link rel="stylesheet" href="css/demo.css">
 <script src="js/jquery-1.10.2.min.js"></script>
 <script src="js/jquery.mobile-1.4.2.min.js"></script>
   <script src="js/jquery.xdomainajax.js"></script>  
-  <script src="js/functions.js"></script>
+
   
 
 </head>
@@ -17,12 +18,16 @@
   <div data-role="panel" id="myPanel" data-position="right"> 
     
       <div data-role="main" class="ui-content">
-    
-      <div class="ui-field-contain">
-        <label for="search">Search:</label>
-        <input type="search" name="search" id="search" placeholder="Search for content...">
-      </div>
-      <input type="submit" data-inline="true" onclick="alert()" value="Submit">
+ <form class="ui-filterable">
+  <input id="myFilter" data-type="search">
+</form>
+
+<ul data-role="listview" data-filter="true" data-input="#myFilter">
+  <li><a class="ports" id="2504" >San Ysidro</a></li>
+  <li><a class="ports" id="2506" >Otay</a></li>
+  <li><a class="ports" id="2503" >Calexico</a></li>
+  <li><a class="ports" id="2505" >Tecate</a></li>
+</ul>
     
   </div>
 
@@ -34,15 +39,14 @@
     <h1>Garitas Tijuana</h1>
     <div data-role="navbar" data-iconpos="top">
       <ul>
-        <li><a href="#" onclick="getData()"  data-icon="home">Home</a></li>
-        <li><a href="#" onclick="getData()" data-icon="arrow-r">Reload</a></li>
-        <li>   <a href="#myPanel" data-icon="search" class="ui-btn ui-btn-inline ui-corner-all ui-shadow">Open Panel</a></li>
+        <li><a href="#" onclick="getData(2504)"  data-icon="home">Home</a></li>        
+        <li>   <a href="#myPanel" data-icon="search" class="ui-btn ui-btn-inline ui-corner-all ui-shadow">Ports</a></li>
       </ul>
     </div>
   </div>
 
   <div data-role="main" class="ui-content" id="main">
-    
+      <div id="content"></div>  
   </div>
 
   <div data-role="footer" data-position="fixed" data-fullscreen="true">
@@ -50,6 +54,8 @@
   </div>
 </div> 
 
+
+  <script src="js/functions.js"></script>
 </body>
 </html>
 
