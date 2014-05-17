@@ -13,22 +13,44 @@
 </head>
 <body>
 
-<div data-role="page" id="pageone">
+<div data-role="page" id="pageone" data-theme="b">
 
-  <div data-role="panel" id="myPanel" data-position="right"> 
+  <div data-role="panel" id="myPanel" data-position="right" data-theme="a"> 
     
       <div data-role="main" class="ui-content">
+          <a href="#pageone" data-rel="close" class="ui-btn">Back </a>    
  <form class="ui-filterable">
   <input id="myFilter" data-type="search">
 </form>
+    
 
+    
 <ul data-role="listview" data-filter="true" data-input="#myFilter">
   <li><a class="ports" id="2504" >San Ysidro</a></li>
   <li><a class="ports" id="2506" >Otay</a></li>
+  <li><a class="ports" id="2505" >Tecate  </a></li>
   <li><a class="ports" id="2503" >Calexico</a></li>
-  <li><a class="ports" id="2505" >Tecate</a></li>
+  <li><a class="ports" id="2402" >El Paso</a></li>
+  <li><a class="ports" id="2604" >Nogales </a></li>
+  <li><a class="ports" id="2307" >Rio Grande City</a></li>
+  <li><a class="ports" id="2302" >Del Rio</a></li>
+  <li><a class="ports" id="2502" >Andrade</a></li>
+  <li><a class="ports" id="5355" >Brownsville</a></li>
+  <li><a class="ports" id="2406" >Columbus</a></li>
+  <li><a class="ports" id="2601" >Douglas</a></li>
+  <li><a class="ports" id="2404" >Fabens </a></li>
+  <li><a class="ports" id="l245" >Hidalgo/Pharr</a></li>
+  <li><a class="ports" id="2602" >Lukeville</a></li>
+  <li><a class="ports" id="2603" >Naco </a></li>
+  <li><a class="ports" id="2403" >Presidio </a></li>
+  <li><a class="ports" id="2309" >Progreso </a></li>
+  <li><a class="ports" id="2408" >Santa Teresa </a></li>  
+  <li><a class="ports" id="2608" >San Luis </a></li>
+
+
+
 </ul>
-    
+
   </div>
 
 
@@ -49,7 +71,7 @@
       <div id="content"></div>  
   </div>
 
-  <div data-role="footer" data-position="fixed" data-fullscreen="true">
+  <div data-role="footer" data-position="fixed" data-fullscreen="true" data-theme="b">
     <h1>Garitas</h1>
   </div>
 </div> 
